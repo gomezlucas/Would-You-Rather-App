@@ -1,17 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
+import { Container } from 'react-bootstrap';
+import { createStore, compose } from 'redux'
+import reducers from './reducers'
+import middleware from './middleware'
+import { Provider } from 'react-redux'
+
+
+
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+
+// To debug
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(reducers, composeEnhancers(middleware))
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <Container className="pt-5">
+      <App />
+    </Container>
+  </Provider>
+  ,
+
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
