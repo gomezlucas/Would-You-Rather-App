@@ -4,16 +4,17 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
 import { connect } from "react-redux"
-import {logoutAuthedUser} from '../actions/authedUser'
-
+import { logoutAuthedUser } from '../actions/authedUser'
+ import {withRouter} from 'react-router-dom';
 
 class Navegation extends React.Component {
 
     handleOnClick = () => {
         const { dispatch } = this.props
-
         dispatch(logoutAuthedUser())
-     }
+        this.props.history.push("/");
+
+    }
 
 
     render() {
@@ -52,5 +53,5 @@ function mapStateToProps({ authedUser }) {
     }
 }
 
-export default connect(mapStateToProps)(Navegation);
+export default withRouter(connect(mapStateToProps)(Navegation));
 

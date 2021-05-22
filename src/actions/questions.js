@@ -11,18 +11,3 @@ export function receiveQuestions(questions) {
       questions
    }
 }
-
-
-export function addAnswerToQuestions(question) {
-   return {
-      type: ADD_ANSWER_TO_QUESTIONS,
-      question
-   }
-}
-
-export function addQuestionToQuestions(question) {
-   return {
-      type: ADD_QUESTION_TO_QUESTIONS,
-      question
-   }
-}

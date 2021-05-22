@@ -1,8 +1,7 @@
 import {
     RECEIVE_QUESTIONS,
-    ADD_ANSWER_TO_QUESTIONS,
-    ADD_QUESTION_TO_QUESTIONS
 } from '../actions/questions'
+import {ADD_ANSWER, ADD_QUESTION} from '../actions/shared'
 
 
 
@@ -14,28 +13,26 @@ export default function questions(state = {}, action) {
                 ...state,
                 ...action.questions
             }
-
-        case ADD_ANSWER_TO_QUESTIONS:
+        case ADD_ANSWER:
+            const { answerObj } = action
+             return {
+                ...state,
+                [answerObj.qid]: {
+                    ...state[answerObj.qid],
+                    [answerObj.answer]: {
+                        ...state[answerObj.qid][answerObj.answer],
+                        votes: [...state[answerObj.qid][answerObj.answer].votes, answerObj.authedUser]
+                    }
+                }
+            }
+        case ADD_QUESTION:
             const { question } = action
              return {
                 ...state,
-                [question.qid]: {
-                    ...state[question.qid],
-                    [question.answer]: {
-                        ...state[question.qid][question.answer],
-                        votes: [...state[question.qid][question.answer].votes, question.authedUser]
-                    }
-                }
-
-            }
-        case ADD_QUESTION_TO_QUESTIONS:
-             return {
-                ...state,
-                [action.question.id]: {
-                    ...state[action.question.author], ...action.question
+                [question.id]: {
+                    ...state[question.author], ...question
                 }
             }
-
         default:
             return state
     }

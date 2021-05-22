@@ -3,11 +3,11 @@ import { saveQuestionAnswer } from '../utils/api'
 import { saveQuestion } from '../utils/api'
 import { receiveUsers } from './users'
 import { receiveQuestions } from './questions'
-import { addAnswerToUsers } from './users'
-import { AddQuestionToUsers } from './users'
-import { addAnswerToQuestions } from './questions'
-import { addQuestionToQuestions } from './questions'
+ /*import { AddQuestionToUsers } from './users'
+ import { addQuestionToQuestions } from './questions'*/
 
+export const ADD_ANSWER = 'ADD_ANSWER'
+export const ADD_QUESTION = 'ADD_QUESTION'
 
 export function handleInitialData() {
     return (dispatch) => {
@@ -18,6 +18,15 @@ export function handleInitialData() {
                 dispatch(receiveQuestions(questions))
             })
         )
+    }
+}
+
+
+
+function addAnswer(answerObj) {
+    return {
+        type: ADD_ANSWER,
+        answerObj
     }
 }
 
@@ -33,12 +42,19 @@ export function handleAddAnswer(id, answer) {
             answerObj
         )
             .then(() => {
-                dispatch(addAnswerToUsers(answerObj))
-                dispatch(addAnswerToQuestions(answerObj))
-            })
+                dispatch(addAnswer(answerObj))
+             })
             .catch(error => console.log(error))
     }
 }
+
+
+ function addQuestion(question) {
+    return {
+       type: ADD_QUESTION,
+       question
+    }
+ }
 
 
 export function handleAddQuestion(author, optionOneText, optionTwoText) {
@@ -47,11 +63,12 @@ export function handleAddQuestion(author, optionOneText, optionTwoText) {
             author, optionOneText, optionTwoText
         })
             .then((question) => {
-                const { id, author } = question
-                dispatch(AddQuestionToUsers({
+                dispatch(addQuestion(question))
+
+            /*    dispatch(AddQuestionToUsers({
                     id, author
                 }))
-                dispatch(addQuestionToQuestions(question))
+                dispatch(addQuestionToQuestions(question))*/
 
             })
             .catch(error => console.log(error))

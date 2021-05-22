@@ -1,4 +1,5 @@
-import { RECEIVE_USERS, ADD_ANSWER_TO_USERS, ADD_QUESTION_TO_USERS } from '../actions/users'
+import { RECEIVE_USERS } from '../actions/users'
+import {ADD_ANSWER, ADD_QUESTION} from  '../actions/shared'
 
 export default function users(state = {}, action) {
     switch (action.type) {
@@ -7,31 +8,27 @@ export default function users(state = {}, action) {
                 ...state,
                 ...action.users,
             }
-        case ADD_ANSWER_TO_USERS:
-            const { question } = action
+        case ADD_ANSWER:
+            const { answerObj } = action
             return {
                 ...state,
-                [question.authedUser]: {
-                    ...state[question.authedUser],
+                [answerObj.authedUser]: {
+                    ...state[answerObj.authedUser],
                     answers: {
-                        ...state[question.authedUser].answers,
-                        [question.qid]: question.answer
+                        ...state[answerObj.authedUser].answers,
+                        [answerObj.qid]: answerObj.answer
                     }
                 }
             }
-        case ADD_QUESTION_TO_USERS:
-            const { id, author } = action.info
+        case ADD_QUESTION:
+            const { question } = action
              return {
                 ...state,
-                [author]: {
-                    ...state[author],
-                    questions: [...state[author].questions, id]
+                [question.author]: {
+                    ...state[question.author],
+                    questions: [...state[question.author].questions, question.id]
                 }
-
-            }
-
-            
-
+            }          
         default:
             return state
     }

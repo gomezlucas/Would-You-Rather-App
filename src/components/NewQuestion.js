@@ -41,8 +41,7 @@ class NewQuestion extends Component {
         const {toHome} = this.state
 
         if (toHome) {
-            console.log('entrooooooo')
-            return <Redirect to='/' />
+             return <Redirect  to='/'/>
         }
 
         return (

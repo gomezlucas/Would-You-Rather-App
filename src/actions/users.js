@@ -12,21 +12,4 @@ export function receiveUsers(users) {
     }
 }
 
-
-export function AddQuestionToUsers(info) {
-    return {
-        type: ADD_QUESTION_TO_USERS,
-        info
-    }
-}
-
-
-export function addAnswerToUsers(question) {
-    return {
-        type: ADD_ANSWER_TO_USERS,
-        question
-    }
-}
-
-
-
+ 

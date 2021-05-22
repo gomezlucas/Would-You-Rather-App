@@ -5,11 +5,23 @@
 In your app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
 
-## Instructions to get Started
+## Getting Started and Installing
+
 * clone this repository
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
+## Built With
+
+* [React](https://reactjs.org/) - ReactJS
+* [Redux](https://redux.js.org/) - Redux
+* [React-Bootstrap](https://react-bootstrap.github.io/) - React-Bootstrap
+
+
+
+## Coded By
+
+* **Lucas Gomez** - [PurpleBooth](https://github.com/gomezlucas)
 
 ## Screens
 
@@ -19,13 +31,12 @@ In your app, users will be able to answer questions, see which questions they ha
 ![Image of Leaderboard](./public/screens/leaderboard.png)
 
 
-## Info 
+## Backend  
 
 This is the starter code for the final assessment project for Udacity's React & Redux course.
 
 The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
 
-Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
 ## Data
 
@@ -116,10 +127,8 @@ The code talks to the database via 4 methods:
 | qid | String | The id of the question that was answered|
 | answer | String | The option the user selected. The value should be either `"optionOne"` or `"optionTwo"`|
 
-## Contributing
-
-This repository is the starter code for *all* Udacity students. Therefore, we most likely will not accept pull requests. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md).
-
-
-## Resources
+ 
+## Acknowledgments
 https://www.freepik.es/fotos/personas'> The pics used in the project were got from www.freepik.es
+
+This repository was based on the the starter code for *all* Udacity students. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md)
