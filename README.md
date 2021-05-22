@@ -21,7 +21,7 @@ In your app, users will be able to answer questions, see which questions they ha
 
 ## Coded By
 
-* **Lucas Gomez** - [PurpleBooth](https://github.com/gomezlucas)
+* **Lucas Gomez** - [github](https://github.com/gomezlucas)
 
 ## Screens
 
