@@ -7,7 +7,7 @@ import Leaderboard from './Leaderboard'
 import Question from './Question'
 import NewQuestion from './NewQuestion'
 import My404Component from './My404Component'
-import { handleInitialData } from '../actions/shared'
+ import { handleInitialData } from '../actions/shared'
 import { connect } from 'react-redux'
 class App extends Component {
 
@@ -21,9 +21,9 @@ class App extends Component {
       <Router>
         {
           authedUser ?
-            <Fragment>
+          <Fragment>
               <Navegation />
-              <Switch>
+               <Switch>
               <Route path='/leaderboard' component={Leaderboard} />
               <Route path='/add' component={NewQuestion} />
               <Route path='/questions/:id' component={Question} />
@@ -33,7 +33,7 @@ class App extends Component {
             </Fragment>
             :
             <Login />
-        }
+         }
       </Router>
     );
   }

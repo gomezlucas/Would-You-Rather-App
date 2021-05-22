@@ -121,5 +121,5 @@ The code talks to the database via 4 methods:
 This repository is the starter code for *all* Udacity students. Therefore, we most likely will not accept pull requests. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md).
 
 
-## 
-'https://www.freepik.es/fotos/personas'> The pics used in the project were got from www.freepik.es
+## Resources
+https://www.freepik.es/fotos/personas'> The pics used in the project were got from www.freepik.es

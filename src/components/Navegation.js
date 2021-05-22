@@ -19,7 +19,7 @@ class Navegation extends React.Component {
     render() {
         const { authedUser } = this.props
         return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"  activeKey="">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"  >
                 <LinkContainer to="/">
                     <Navbar.Brand >Would you Rather? </Navbar.Brand>
                 </LinkContainer>

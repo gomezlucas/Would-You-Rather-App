@@ -5,15 +5,13 @@ import { receiveUsers } from './users'
 import { receiveQuestions } from './questions'
 import { addAnswerToUsers } from './users'
 import { AddQuestionToUsers } from './users'
-
 import { addAnswerToQuestions } from './questions'
 import { addQuestionToQuestions } from './questions'
 
 
-
-
 export function handleInitialData() {
     return (dispatch) => {
+
         return (getInitialData()
             .then(({ users, questions }) => {
                 dispatch(receiveUsers(users))
